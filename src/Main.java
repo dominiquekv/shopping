@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -30,7 +31,9 @@ public class Main {
         }
 
         System.out.println("**************************");
-        System.out.println("COMPRAS REALIZADAS:\n");
+        System.out.println("\nCOMPRAS REALIZADAS:\n");
+        Collections.sort(card.getPurchases());
+
         for (Purchase p : card.getPurchases()) {
             System.out.println(p.getDescription() + " - " + p.getValue());
         }

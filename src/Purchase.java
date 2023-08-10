@@ -1,8 +1,6 @@
-public class Purchase {
+public class Purchase implements Comparable<Purchase> {
     private String description;
     private double value;
-
-
 
 
     public Purchase(String description, double value) {
@@ -21,5 +19,10 @@ public class Purchase {
     @Override
     public String toString() {
         return "Purchase: description = '" + description +"', '" + value + "'.";
+    }
+
+    @Override
+    public int compareTo(Purchase anotherPurchase) {
+        return Double.valueOf(this.value).compareTo(Double.valueOf(anotherPurchase.value));
     }
 }
